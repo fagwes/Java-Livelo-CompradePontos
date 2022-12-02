@@ -15,40 +15,30 @@ public class Testes extends Metodos {
 	Elementos elementos = new Elementos();
 	MassadeDados massadedados = new MassadeDados();
 
-	@Given("que eu esteja em no site da livelo")
-	public void que_eu_esteja_em_no_site_da_livelo() throws InterruptedException {
-
+	@Given("que eu esteja no site da livelo não logado")
+	public void que_eu_esteja_no_site_da_livelo_não_logado() throws InterruptedException {
 		Executa.abrirnavegador();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
+
 	}
 
-	@After
-	public void fecharnavegador() {
-
-		Executa.fecharnavegador();
-	}
-
-	@Given("clica em compre pontos")
-	public void clica_em_compre_pontos() {
-
+	@Given("clico em compre pontos")
+	public void clico_em_compre_pontos() throws InterruptedException {
 		metodos.clicar(elementos.comprepontos);
+		Thread.sleep(2000);
 
 	}
 
-	@Given("clico em para você")
-	public void clico_em_para_você() throws InterruptedException {
+	@Given("clico em para voce")
+	public void clico_em_para_voce() throws InterruptedException {
+
 		metodos.clicar(elementos.paravoce);
 		Thread.sleep(2000);
 	}
 
-	@Given("preencho quantos pontos voce quer comprar")
-	public void preencho_quantos_pontos_voce_quer_comprar() throws InterruptedException {
+	@When("preencho as informações")
+	public void preencho_as_informações() throws InterruptedException {
 		metodos.escrever(elementos.pontoscomprar, massadedados.pontoscomprar);
-		Thread.sleep(2000);
-	}
-
-	@Given("preencho cupom de desconto")
-	public void preencho_cupom_de_desconto() throws InterruptedException {
 		metodos.escrever(elementos.inserircupom, massadedados.inserircupom);
 		Thread.sleep(2000);
 	}
@@ -60,8 +50,12 @@ public class Testes extends Metodos {
 	}
 
 	@Then("sou redirecionado para a tela de login")
-	public void sou_redirecionado_para_a_tela_de_login() {
-
+	public void sou_redirecionado_para_a_tela_de_login() throws InterruptedException {
+		Thread.sleep(2000);
 	}
 
+	@After
+	public void fecharnavegador() {
+		Executa.fecharnavegador();
+	}
 }
