@@ -8,15 +8,11 @@ Feature: compra de pontos
 
 
       
-  @compradepontos
+  @compradepontosteste1
   Scenario: Compra de pontos para voce
-    Given que eu esteja em no site da livelo
-    And clica em compre pontos
-    And clico em para você
-    And preencho quantos pontos voce quer comprar
-    And preencho cupom de desconto
-    When clico em comprar pontos
+    Given que eu esteja no site da livelo não logado
+    And clico em compre pontos
+    And clico em para voce
+    When preencho as informações
+    And clico em comprar pontos
     Then sou redirecionado para a tela de login
-
-
- 
