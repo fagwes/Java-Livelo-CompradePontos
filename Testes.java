@@ -1,5 +1,7 @@
 package testes;
 
+import java.io.IOException;
+
 import elementos.Elementos;
 import executa.Executa;
 import io.cucumber.java.After;
@@ -18,8 +20,15 @@ public class Testes extends Metodos {
 	@Given("que eu esteja no site da livelo não logado")
 	public void que_eu_esteja_no_site_da_livelo_não_logado() throws InterruptedException {
 		Executa.abrirnavegador();
+
 		Thread.sleep(3000);
 
+	}
+
+	@After
+	public void fecharnavegador() {
+
+		Executa.fecharnavegador();
 	}
 
 	@Given("clico em compre pontos")
@@ -50,12 +59,10 @@ public class Testes extends Metodos {
 	}
 
 	@Then("sou redirecionado para a tela de login")
-	public void sou_redirecionado_para_a_tela_de_login() throws InterruptedException {
+	public void sou_redirecionado_para_a_tela_de_login() throws InterruptedException, IOException {
+
+		Metodos.evidenciarteste("CT01 - validar");
 		Thread.sleep(2000);
 	}
 
-	@After
-	public void fecharnavegador() {
-		Executa.fecharnavegador();
-	}
 }
