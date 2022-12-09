@@ -25,7 +25,9 @@ public class Testes extends Metodos {
 		Thread.sleep(8000);
 
 	}
-
+        @After ("fecharnavegador")
+		public void fecharnavegador() {
+		Executa.fecharnavegador();
 	@Given("clico em compre pontos")
 	public void clico_em_compre_pontos() throws InterruptedException {
 		Metodos.clicar(elementos.comprepontos);
