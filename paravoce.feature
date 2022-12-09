@@ -5,10 +5,7 @@ Feature: compra de pontos
  quero realizar o acessoa a página compra de pontos
  para comprar pontos
  
-
-
-      
-  @compradepontosteste1
+ @compradepontosparavoce
   Scenario: Compra de pontos para voce
     Given que eu esteja no site da livelo não logado
     And clico em compre pontos
